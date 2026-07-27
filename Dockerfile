@@ -1,7 +1,6 @@
 # Stage 1: Composer Build
 FROM composer:2.7 AS vendor
 WORKDIR /app
-COPY database/ database/
 COPY composer.json composer.lock ./
 RUN composer install \
     --ignore-platform-reqs \
@@ -10,7 +9,7 @@ RUN composer install \
     --no-scripts \
     --prefer-dist
 
-FROM node:20.20.2-alpine AS node-builder
+FROM node:20-slim AS node-builder
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
@@ -24,7 +23,6 @@ WORKDIR /app
 
 COPY --chown=application:application . .
 COPY --from=vendor --chown=application:application /app/vendor/ ./vendor/
-
 COPY --from=node-builder --chown=application:application /app/public/build/ ./public/build/
 COPY --chown=application:application .env.staging .env
 
