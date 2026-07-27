@@ -1,61 +1,57 @@
 @extends('layouts.app')
 
 @section('title', 'Caesar Vior Byrnanda | Fullstack Web Developer & DevOps')
-
 @section('content')
-
     @php
-        // Data portfolio dideklarasikan langsung di Blade untuk kemudahan instalasi awal tanpa database.
-        // Struktur data ini nantinya sangat mudah dipindahkan ke database & controller jika sudah siap.
         $projects = [
-            'ecommerce' => [
-                'title' => 'E-Commerce RESTful API & CI/CD Pipeline',
-                'category' => 'API & Cloud Infrastructure',
-                'banner_text' => 'API & CLOUD',
+            'decidepro' => [
+                'title' => 'DecidePro - Sistem Pendukung Keputusan Teaching Factory',
+                'category' => 'Decision Support System & Web App',
+                'banner_image' => '/images/projects/decidepro-banner.png',
                 'desc' =>
-                    'Arsitektur sistem backend modular berskala industri yang dikembangkan untuk mendukung transaksi e-commerce dengan integritas data tinggi dan deployment otomatis.',
+                    'Sistem Penunjang Keputusan berbasis metode Analytical Hierarchy Process (AHP) yang dirancang untuk membantu penyeleksian siswa pada program Teaching Factory di SMK Negeri 6 Malang.',
                 'features' => [
-                    'Autentikasi berlapis aman menggunakan Laravel Sanctum & Role-based Access Control (RBAC).',
-                    'Integrasi kontainerisasi Docker untuk standarisasi lingkungan development dan produksi.',
-                    'Pipeline CI/CD otomatis terkonfigurasi via GitHub Actions untuk pengujian otomatis sebelum deploy.',
-                    'Sistem caching database kompleks dengan Redis untuk akselerasi respon server hingga 40%.',
+                    'Penerapan algoritma Analytical Hierarchy Process (AHP) untuk kalkulasi pembobotan kriteria secara akurat.',
+                    'Penilaian obyektif berbasis 3 kriteria utama: Nilai Psikologis, Nilai Semester, dan Nilai Hasil Wawancara Industri.',
+                    'Manajemen data siswa dan rekapitulasi hasil seleksi secara otomatis untuk mempermudah pihak sekolah.',
+                    'Antarmuka web interaktif untuk mempermudah penginputan dan visualisasi peringkat kelayakan siswa.',
                 ],
-                'tags' => ['Laravel', 'Docker', 'CI/CD', 'Redis', 'PostgreSQL'],
+                'tags' => ['Laravel', 'AHP Algorithm', 'MySQL', 'TailwindCSS'],
                 'link' => 'https://github.com/',
             ],
-            'school' => [
-                'title' => 'Sistem Informasi Akademik Manajemen Sekolah',
-                'category' => 'Web Application',
-                'banner_text' => 'WEB APP',
+            'adiloka' => [
+                'title' => 'Adiloka Language Website & Admin Platform',
+                'category' => 'Client Project & Web Platform',
+                'banner_image' => '/images/projects/adiloka-banner.png',
                 'desc' =>
-                    'Platform digital administrasi internal sekolah guna merampingkan tata kelola data akademik siswa, jadwal mata pelajaran, dan pelaporan nilai secara terpadu.',
+                    'Pengembangan platform web profesional untuk client (adiloka-language.com) yang mencakup landing page publik serta admin dashboard komprehensif dengan arsitektur terpisah domain.',
                 'features' => [
-                    'Antarmuka interaktif dan sangat responsif yang dibangun menggunakan Tailwind CSS & Alpine.js.',
-                    'Manajemen basis data relasional yang dioptimalkan untuk penanganan ribuan entri data.',
-                    'Fitur ekspor laporan otomatis berformat PDF dan Excel untuk kemudahan staf tata usaha.',
-                    'Panel multi-user dengan hak akses terpisah antara Administrator, Guru, Orang Tua, dan Siswa.',
+                    'Pemisahan arsitektur domain antara portal publik (landing page) dan admin dashboard untuk keamanan ekstra.',
+                    'Sistem admin dashboard kaya fitur mencakup CRUD Multi-language, Team Management, serta Generate & Export PDF.',
+                    'Otomatisasi deployment pipeline CI/CD yang terintegrasi dari lingkungan local ke VPS/Hosting.',
+                    'Antarmuka yang dioptimalkan untuk performa tinggi, kemudahan navigasi, serta skalabilitas pengelolaan konten.',
                 ],
-                'tags' => ['PHP Laravel', 'TailwindCSS', 'MySQL', 'AlpineJS'],
-                'link' => 'https://github/',
+                'tags' => ['Laravel', 'Multi-Language', 'CI/CD', 'VPS Hosting', 'TailwindCSS'],
+                'link' => 'https://adiloka-language.com/',
             ],
-            'monitoring' => [
-                'title' => 'Server Prometheus & Grafana Monitoring',
-                'category' => 'DevOps & Monitoring',
-                'banner_text' => 'MONITORING',
+            'bintaro' => [
+                'title' => 'Bintaro Living Landing Page & High-SEO Platform',
+                'category' => 'Client Project & SEO Optimization',
+                // SEKARANG: Ganti dengan path gambar
+                'banner_image' => '/images/projects/bintaro-banner.png', // Contoh path
                 'desc' =>
-                    'Infrastruktur penunjang server untuk mendeteksi kesehatan VPS, memantau penggunaan CPU, memori, penyimpanan, serta memberikan notifikasi downtime.',
+                    'Pengembangan website landing page responsif untuk client (bintaroliving.com) yang dirancang khusus untuk performa tinggi, optimasi SEO kompleks, serta pemantauan visibilitas pencarian terpadu.',
                 'features' => [
-                    'Pengumpulan metrik performa server secara real-time langsung melalui daemon node-exporter.',
-                    'Visualisasi metrik statistik yang elegan, mendalam, dan interaktif via Grafana Dashboard.',
-                    'Notifikasi peringatan darurat otomatis yang dikirim langsung melalui Telegram Chat Webhook.',
-                    'Penerapan kriteria alert rules guna memitigasi server macet atau overload secara proaktif.',
+                    'Desain landing page modern dan responsif yang berfokus pada conversion rate dan user experience.',
+                    'Penerapan struktur SEO kompleks (Meta Tags, Schema Markup, Dynamic Sitemap, dan Open Graph) untuk peringkat maksimal di Google.',
+                    'Integrasi penuh dengan Google Search Console guna memantau kineja pencarian, indexing, dan analitik lalu lintas web.',
+                    'Alur kerja CI/CD otomatis untuk efisiensi deployment berkelanjutan dari lingkungan local ke VPS/Hosting.',
                 ],
-                'tags' => ['Prometheus', 'Grafana', 'Linux VPS', 'Webhooks', 'Docker'],
-                'link' => 'https://github.com/',
+                'tags' => ['SEO Optimization', 'Google Search Console', 'CI/CD', 'VPS Hosting', 'TailwindCSS'],
+                'link' => 'https://bintaroliving.com/',
             ],
         ];
     @endphp
-
     <header
         class="relative min-h-[calc(100vh-4rem)] flex items-center bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950/40 overflow-hidden">
         <div
@@ -104,11 +100,10 @@
                         class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl blur opacity-30 group-hover:opacity-45 transition duration-1000">
                     </div>
 
-                    {{-- <!-- Tag Gambar dengan Fallback URL jika asset belum terisi -->
-                    {{-- <img src="{{ asset('watermarked_img_14603384916888059463.png') }}"
-                        onerror="this.src='watermarked_img_14603384916888059463.png'"
+                    <!-- Tag Gambar dengan Fallback URL jika asset belum terisi -->
+                    <img src="{{ asset('images/civra-photo.png') }}" onerror="this.src='civra-photo.png'"
                         alt="Caesar Vior Byrnanda - Profile Photo"
-                        class="relative w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]"> --}} --}}
+                        class="relative  object-cover object-center transition-transform duration-500 group-hover:scale-[1.02]">
                 </div>
             </div>
         </div>
@@ -185,9 +180,9 @@
                 </div>
                 <div
                     class="bg-slate-900/40 border border-slate-900 p-6 rounded-2xl hover:border-indigo-500/30 transition-all duration-300">
-                    <span class="text-xs font-semibold text-indigo-400 uppercase tracking-wider">2020 - 2024</span>
+                    <span class="text-xs font-semibold text-indigo-400 uppercase tracking-wider">2025 - Sekarang</span>
                     <h3 class="font-bold text-xl text-white mt-1">S1 Teknik Informatika</h3>
-                    <p class="text-sm text-slate-400 mb-2">Universitas Pilihan Utama</p>
+                    <p class="text-sm text-slate-400 mb-2">Politeknik Negeri Malang</p>
                     <p class="text-slate-500 text-sm leading-relaxed">
                         Fokus pada rekayasa perangkat lunak, sistem terdistribusi, dan keamanan jaringan. Menyelesaikan
                         tugas akhir tentang otomasi dan optimasi server load balancing.
@@ -201,12 +196,12 @@
                 </div>
                 <div
                     class="bg-slate-900/40 border border-slate-900 p-6 rounded-2xl hover:border-indigo-500/30 transition-all duration-300">
-                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">2017 - 2020</span>
-                    <h3 class="font-bold text-xl text-white mt-1">SMK Teknik Komputer & Jaringan</h3>
-                    <p class="text-sm text-slate-400 mb-2">SMK Negeri Contoh</p>
+                    <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">2021 - 2025</span>
+                    <h3 class="font-bold text-xl text-white mt-1">Sistem Informasi Jaringan Aplikasi (SIJA)</h3>
+                    <p class="text-sm text-slate-400 mb-2">SMK Negeri 6 Malang</p>
                     <p class="text-slate-500 text-sm leading-relaxed">
-                        Mempelajari konsep dasar konfigurasi router Cisco, Linux system administration, serta dasar
-                        pemrograman web statis.
+                        Fokus pada pengembangan Web Development, integrasi ekosistem IoT, sistem operasi Linux dasar, serta
+                        penerapan *team management* dalam pengerjaan proyek.
                     </p>
                 </div>
             </div>
@@ -232,10 +227,8 @@
                         class="bg-slate-950 rounded-2xl shadow-xl border border-slate-900 overflow-hidden flex flex-col group hover:border-indigo-500/50 hover:shadow-indigo-500/5 transition-all duration-300 cursor-pointer scroll-reveal">
                         <div
                             class="h-48 bg-indigo-950/20 relative flex items-center justify-center border-b border-slate-900 overflow-hidden">
-                            <span
-                                class="text-4xl text-indigo-500/20 font-bold group-hover:scale-110 transition-transform duration-350 select-none">
-                                {{ $project['banner_text'] }}
-                            </span>
+                            <img src="{{ asset($project['banner_image']) }}" alt="{{ $project['title'] }}"
+                                class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-350 select-none">
                             <div
                                 class="absolute inset-0 bg-indigo-600/5 opacity-0 group-hover:opacity-100 transition-opacity">
                             </div>
@@ -309,7 +302,7 @@
                     </button>
                     <a id="modal-link" href="#" target="_blank" rel="noopener"
                         class="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold rounded-xl shadow-md shadow-indigo-600/10 transition">
-                        Buka Repositori <i class="fa-solid fa-arrow-up-right-from-square ml-1.5 text-xs"></i>
+                        Buka Link Website <i class="fa-solid fa-arrow-up-right-from-square ml-1.5 text-xs"></i>
                     </a>
                 </div>
             </div>
@@ -328,15 +321,11 @@
 
         <!-- Tombol Kontak / Medsos -->
         <div class="flex flex-wrap justify-center gap-4 pt-4 scroll-reveal">
-            <a href="https://linkedin.com/" target="_blank" rel="noopener"
-                class="flex items-center gap-3 px-6 py-3.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl font-semibold text-sm border border-slate-800 hover:border-slate-700 transition-all duration-200">
-                <i class="fa-brands fa-linkedin text-blue-500 text-lg"></i> LinkedIn
-            </a>
-            <a href="https://github.com/" target="_blank" rel="noopener"
+            <a href="https://github.com/CaesarVior" target="_blank" rel="noopener"
                 class="flex items-center gap-3 px-6 py-3.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl font-semibold text-sm border border-slate-800 hover:border-slate-700 transition-all duration-200">
                 <i class="fa-brands fa-github text-white text-lg"></i> GitHub
             </a>
-            <a href="mailto:caesarvior@yourdomain.com"
+            <a href="mailto:civrabusiness@gmail.com"
                 class="flex items-center gap-3 px-6 py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-semibold text-sm transition-all duration-200 shadow-lg shadow-indigo-600/25">
                 <i class="fa-solid fa-envelope text-lg"></i> Kirim Email
             </a>

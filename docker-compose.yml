@@ -1,0 +1,20 @@
+services:
+  portofolio_civra_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: portofolio-civra-app:latest
+    container_name: portofolio-civra-app-container
+    restart: always
+    ports:
+      - "8007:80"
+    env_file:
+      - .env
+    environment:
+      - WEB_DOCUMENT_ROOT=/app/public
+    networks:
+      - network-main-mysql
+
+networks:
+  network-main-mysql:
+    external: true

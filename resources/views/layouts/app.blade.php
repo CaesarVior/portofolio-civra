@@ -4,8 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- CSRF Token Laravel (Sangat penting untuk security request AJAX/Axios/Form) -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- 1. SEO META TAGS DINAMIS -->
@@ -41,13 +39,9 @@
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
         rel="stylesheet">
 
-    <!-- FontAwesome CDN untuk Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- Vite Asset Bundler Laravel (Mengotomatisasi load CSS & JS build produksi) -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <!-- Tailwind CDN Fallback (Digunakan sebagai backup jika Vite belum dikompilasi saat setup awal) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
