@@ -17,6 +17,7 @@
 
     <!-- URL Kanonikal untuk menghindari konten duplikat di mata Google Search Console -->
     <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="icon" href="{{ asset('civra-icon.png') }}" type="image/png">
 
     <!-- 2. OPEN GRAPH / FACEBOOK (Optimasi Share Link Sosial Media) -->
     <meta property="og:type" content="website">
@@ -118,7 +119,7 @@
 
             <!-- Logo Brand -->
             <a href="#" class="font-bold text-xl tracking-tight text-indigo-500 hover:text-indigo-400 transition">
-                <img src="{{ asset('civra-logo-white.png') }}" alt="Civra Logo" class="h-12 w-auto">
+                <img src="{{ asset('civra-logo-white-new.png') }}" alt="Civra Logo" class="h-12 w-auto">
             </a>
 
             <!-- Menu Desktop -->
