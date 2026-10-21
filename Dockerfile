@@ -19,6 +19,8 @@ RUN npm run build
 
 FROM php:8.5.12-apache
 
+RUN docker-php-ext-install pdo_mysql
+
 WORKDIR /app
 
 COPY --chown=application:application . .
