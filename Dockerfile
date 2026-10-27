@@ -19,7 +19,10 @@ RUN npm run build
 
 FROM php:8.5.12-apache
 
-RUN docker-php-ext-install pdo_mysql
+RUN docker-php-ext-install pdo_mysql \
+    && a2enmod rewrite \
+    && sed -ri 's!/var/www/html!/app/public!g' \
+       /etc/apache2/sites-available/000-default.conf
 
 WORKDIR /app
 

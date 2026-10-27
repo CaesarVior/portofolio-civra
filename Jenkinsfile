@@ -19,10 +19,7 @@ pipeline {
 
         stage('Laravel Post-Deployment') {
             steps {
-                echo 'Waiting for database to be fully ready...'
-                sh 'until docker exec main-mysql-container mysqladmin ping --silent; do echo "Waiting for MySQL..."; sleep 2; done'
-                sh 'docker exec portofolio-civra-app-container php artisan migrate'
-                sh 'docker exec portofolio-civra-app-container php artisan optimize:clear'
+                sh 'docker compose up -d --remove-orphans'
             }
         }
     }
