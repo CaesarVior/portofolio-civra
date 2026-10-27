@@ -12,8 +12,6 @@ pipeline {
             steps {
                 echo 'Building and starting containers...'
                 sh 'cp .env.staging .env'
-                sh 'docker compose down -v'
-                sh 'docker compose up -d --build'
             }
         }
 
